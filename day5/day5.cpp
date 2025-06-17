@@ -19,7 +19,7 @@ std::ostream &operator<<(std::ostream &os, Rule r) {
   return os << "Rule{ .values=" << r.values << " }";
 }
 
-struct Input {
+struct Day5Input {
   std::vector<Rule> rules;
   std::vector<std::pair<int, int>> pairs;
 
@@ -48,7 +48,7 @@ struct Input {
               [&before](int a, int b) { return before[a] < before[b]; });
   }
 
-  static Input read_file(const std::string &path) {
+  static Day5Input read_file(const std::string &path) {
     // Generate an ordered list of keys from the first set of lines
     std::vector<Rule> rules;
     std::vector<std::pair<int, int>> pairs;
@@ -87,7 +87,7 @@ struct Input {
  * Then validate each set of rules
  */
 void d5p1(const std::string &path) {
-  Input inp = Input::read_file(path);
+  Day5Input inp = Day5Input::read_file(path);
   int sum = 0;
   for (auto rule : inp.rules) {
     if (inp.validate_rule(rule)) {
@@ -98,7 +98,7 @@ void d5p1(const std::string &path) {
 }
 // Now fix the bad orderings
 void d5p2(const std::string &path) {
-  Input inp = Input::read_file(path);
+  Day5Input inp = Day5Input::read_file(path);
   int sum = 0;
   for (auto rule : inp.rules) {
     if (!inp.validate_rule(rule)) {

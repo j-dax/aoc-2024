@@ -3,6 +3,7 @@
 #include "day3/day3.cpp"
 #include "day4/day4.cpp"
 #include "day5/day5.cpp"
+#include "day6/day6.cpp"
 
 #include <iostream>
 #include <sstream>
@@ -53,7 +54,7 @@ int main(int argc, char *argv[]) {
 
   void (*dayparts[][2])(const std::string &) = {
       {aoc::d1p1, aoc::d1p2}, {aoc::d2p1, aoc::d2p2}, {aoc::d3p1, aoc::d3p2},
-      {aoc::d4p1, aoc::d4p2}, {aoc::d5p1, aoc::d5p2},
+      {aoc::d4p1, aoc::d4p2}, {aoc::d5p1, aoc::d5p2}, {aoc::d6p1, aoc::d6p2},
   };
   dayparts[day - 1][part - 1](filename);
 }
